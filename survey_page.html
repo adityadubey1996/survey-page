@@ -1,0 +1,183 @@
+<style>
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+body {
+  --background-c: hsl(210, 45%, 60%);
+  background-color: var(--background-c, lightgray);
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", Helvetica, sans-serif;
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+header {
+  padding-bottom: 15px;
+  position: fixed;
+  background-color: var(--background-c, lightgray);
+  width: 100%;
+  z-index: 1;
+  top: 0%;
+}
+
+main {
+  background-color: hsl(200, 60%, 100%);
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 80px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  position: relative;
+  top: 80px;
+}
+
+@media (max-width: 400px) {
+  main {
+    top: 65px;
+  }
+}
+
+.title {
+  margin: auto;
+  margin-top: -5px;
+  text-align: center;
+}
+
+#description {
+  margin-top: 10px;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#survey {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+@media (max-width: 600px) {
+  #survey {
+    grid-template-columns: 1fr;
+  }
+  label {
+    text-align: left;
+  }
+}
+
+@media (min-width: 600px) {
+  #survey {
+    grid-template-columns: 1fr 1fr;
+  }
+  label {
+    text-align: right;
+  }
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 0;
+  min-width: 100%;
+}
+
+fieldset label:hover {
+  font-weight: bold;
+}
+
+#submit {
+  margin: auto;
+  background-color: var(--background-c, lightgray);
+  border-radius: 8px;
+  padding: 5px 12px 5px 12px;
+  margin-top: 5px;
+  font-size: 85%;
+}
+
+</style>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey form freecodecamp </title>
+</head>
+<body>
+<header>
+    <section class="title">
+        <h1 id="title">
+            Survey Form
+        </h1>
+        <p id="description" class="title"><em style="font-size:90%;">
+            Let us know what we can improve</em>
+
+        </p>
+
+    </section>
+</header>
+<main>
+    <form id="survey-form">
+        <section id="survey">
+            <label for="name" id="name-label">* Name:</label>
+            <input id="name" type="text" placeholder="enter your name" required>
+            <label for="email" id="email-label">* email:</label>
+            <input id="email" type="email" placeholder="enter your email" required>
+            <label for="number" id="number-label">* Number:</label>
+            <input id="number" type="number" placeholder="enter your number" required>
+            <label for="age" id="age-label">* Age:</label>
+            <input id="age" type="number" placeholder="enter your age" required>
+
+            <label for="dropdown">which option is your current role</label>
+            <select id="dropdown" form="survey-form">
+                <option value="" disabled selected>select an option</option>
+                <option value="student">Student</option>
+                <option value="employee">employee</option>
+                <option value="not to say">not to say</option>
+            </select>
+            <label for="recommendation">* How likely will you recommend</label>
+            <fieldset id="recommendation">
+                <label for="s_definetly"><input type="radio" name="recommended" id="s_definetly" value="definetly" required>Definetly</label>
+                <label for="s_maybe"><input type="radio" name="maybe" id="s_maybe" value="maybe" required>maybe</label>
+                <label for="s_not_sure"><input type="radio" name="not_sure" id="s_not_sure" value="notsure" required>Not sure</label>
+            </fieldset>
+
+
+        <label for="likethemost">What do you like the most</label>
+            <select id="likethemost">
+                <option value="" disable select>select the option</option>
+                <option value="challenges">Challenges</option>
+                <option value="projects">Opurtunity</option>
+                <option value="open source">open source</option>
+            </select>
+
+        <label for="comments">
+            <textarea style="height:90px;resize:vertical;" id="comments" placeholder="enter a comment"></textarea>
+        </label>
+
+
+        </section>
+        <button id="submit">Submit</button>
+    </form>
+
+
+</main>
+</body>
+</html>
